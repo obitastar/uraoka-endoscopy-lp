@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ====== SEO / OGP ====== -->
+  <title>うらおか内科・内視鏡クリニック｜痛くない内視鏡検査（大腸カメラ・胃カメラ）</title>
+  <meta name="description" content="消化器内視鏡専門医による、鎮静剤を使用した苦痛の少ない内視鏡検査（大腸カメラ・胃カメラ）。当日検査対応・個室完備。24時間WEB・LINE予約受付中。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="うらおか内科・内視鏡クリニック｜痛くない内視鏡検査" />
+  <meta property="og:description" content="消化器内視鏡専門医による鎮静剤を使用した苦痛の少ない内視鏡検査。当日検査対応・24時間WEB予約。" />
+  <meta property="og:image" content="ogp.jpg" /><!-- 実OGP画像に差し替え -->
+  <meta property="og:url" content="https://example.com" /><!-- 実URLに差し替え -->
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- ====== Google Fonts ====== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <!-- ====== Tailwind CSS CDN ====== -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ["'Noto Sans JP'", "sans-serif"] },
+        },
+      },
+    };
+  </script>
+
+  <!-- ====== JSON-LD 構造化データ ====== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalClinic",
+    "name": "うらおか内科・内視鏡クリニック",
+    "description": "消化器内視鏡専門医による、鎮静剤を使用した苦痛の少ない内視鏡検査（大腸カメラ・胃カメラ）を提供するクリニックです。",
+    "url": "https://example.com",
+    "telephone": "000-000-0000",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "○○町0-0-0",
+      "addressLocality": "○○市",
+      "addressRegion": "○○県",
+      "postalCode": "000-0000",
+      "addressCountry": "JP"
+    },
+    "medicalSpecialty": "Gastroenterology"
+  }
+  </script>
+
+  <!-- ====== カスタムCSS ====== -->
+  <style>
+    * { font-family: 'Noto Sans JP', sans-serif; }
+    html { scroll-behavior: smooth; }
+
+    /* フェードイン */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(2rem);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ヘッダー */
+    #site-header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      padding: 1rem 0;
+      transition: background 0.3s, box-shadow 0.3s, padding 0.3s;
+    }
+    #site-header.scrolled {
+      background: #fff;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.10);
+      padding: 0.5rem 0;
+    }
+    #header-title { transition: color 0.3s; color: #fff; }
+    #site-header.scrolled #header-title { color: #1f2937; }
+
+    /* アコーディオン */
+    .accordion-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+    .accordion-body.open { max-height: 600px; padding-bottom: 1.25rem; }
+    .accordion-chevron { transition: transform 0.3s; }
+    .accordion-btn[aria-expanded="true"] .accordion-chevron { transform: rotate(180deg); }
+
+    /* スクロール誘導バウンス */
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(8px); }
+    }
+    .bounce { animation: bounce 1.4s infinite; }
+
+    /* タイムライン */
+    .timeline-list { border-left: 2px solid #bfdbfe; padding-left: 2.5rem; }
+    .timeline-list li { position: relative; }
+    .timeline-dot {
+      position: absolute;
+      left: calc(-2.5rem - 18px);
+      top: 0;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: #1d4ed8;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 11px; font-weight: 700;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+    }
+
+    /* スマホ固定フッターの余白 */
+    @media (max-width: 767px) {
+      .pb-mobile-cta { padding-bottom: 56px; }
+    }
+  </style>
+</head>
+
+<body class="text-gray-800 pb-mobile-cta">
+
+  <!-- ================================================================
+       固定ヘッダー
+  ================================================================ -->
+  <header id="site-header" role="banner">
+    <div class="max-w-6xl mx-auto px-4 flex items-center justify-between">
+      <p id="header-title" class="font-bold text-sm md:text-base">
+        うらおか内科・内視鏡クリニック
+      </p>
+      <a href="#cta"
+         class="bg-orange-500 hover:bg-orange-600 text-white text-sm font-bold px-5 py-2 rounded-full transition-colors shadow"
+         style="min-height:40px; display:inline-flex; align-items:center;">
+        WEB予約
+      </a>
+    </div>
+  </header>
+
+
+  <!-- ================================================================
+       Section 1: ファーストビュー（Hero / FV）
+  ================================================================ -->
+  <section id="hero"
+    style="min-height:100svh; background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 55%,#1d4ed8 100%); position:relative; display:flex; align-items:center; justify-content:center; overflow:hidden;"
+    aria-label="ファーストビュー">
+
+    <!-- 背景画像プレースホルダー（ここに院内画像を差し替え） -->
+    <div style="position:absolute;inset:0;background:#94a3b8;opacity:.08;" aria-hidden="true"></div>
+
+    <div class="relative z-10 text-center text-white px-4 max-w-3xl mx-auto" style="padding-top:6rem; padding-bottom:4rem;">
+
+      <!-- 信頼バッジ -->
+      <div class="flex flex-wrap justify-center gap-2 mb-6">
+        <span class="text-xs font-bold px-4 py-1.5 rounded-full" style="background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);">専門医在籍</span>
+        <span class="text-xs font-bold px-4 py-1.5 rounded-full" style="background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);">鎮静剤使用</span>
+        <span class="text-xs font-bold px-4 py-1.5 rounded-full" style="background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);">当日検査対応</span>
+      </div>
+
+      <!-- メインコピー -->
+      <h1 class="font-bold leading-tight mb-5" style="font-size:clamp(1.75rem,5vw,3rem);">
+        寝ている間に終わる、<br>
+        <span style="color:#93c5fd;">痛くない内視鏡検査</span>
+      </h1>
+
+      <!-- サブコピー -->
+      <p class="text-base md:text-lg leading-relaxed mb-10" style="color:#bfdbfe;">
+        消化器内視鏡専門医が、鎮静剤を使用した<br class="hidden md:block">
+        苦痛の少ない検査を丁寧に行います
+      </p>
+
+      <!-- CTAボタン -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#" class="inline-flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold text-base md:text-lg px-8 py-4 rounded-full transition-colors shadow-lg" style="min-height:52px;" aria-label="WEB予約はこちら">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          WEB予約はこちら
+        </a>
+        <a href="#" class="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold text-base md:text-lg px-8 py-4 rounded-full transition-colors shadow-lg" style="min-height:52px;" aria-label="LINE予約">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          LINE予約
+        </a>
+      </div>
+
+      <p class="mt-5 text-sm" style="color:#93c5fd;">24時間いつでもオンライン予約可能</p>
+    </div>
+
+    <!-- スクロール誘導 -->
+    <div class="bounce" style="position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);" aria-hidden="true">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       Section 2: 症状の不安共感（悩み提起）
+  ================================================================ -->
+  <section id="symptoms" class="py-16 md:py-20" style="background:#eff6ff;" aria-label="症状・お悩み">
+    <div class="max-w-2xl mx-auto px-4">
+      <div class="fade-in">
+        <h2 class="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-2">
+          こんな症状やお悩み、<br class="md:hidden">ありませんか？
+        </h2>
+        <p class="text-center text-gray-500 mb-10 text-sm">当てはまる項目がある方は、どうぞお気軽にご相談ください</p>
+
+        <ul class="space-y-3" role="list">
+          <li class="flex items-start gap-3 bg-white rounded-xl px-5 py-4 shadow-sm">
+            <svg class="flex-shrink-0 mt-0.5" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span class="text-gray-700 font-medium text-sm md:text-base">お腹の張り・痛みが続いている</span>
+          </li>
+          <li class="flex items-start gap-3 bg-white rounded-xl px-5 py-4 shadow-sm">
+            <svg class="flex-shrink-0 mt-0.5" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span class="text-gray-700 font-medium text-sm md:text-base">便に血が混じることがある</span>
+          </li>
+          <li class="flex items-start gap-3 bg-white rounded-xl px-5 py-4 shadow-sm">
+            <svg class="flex-shrink-0 mt-0.5" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span class="text-gray-700 font-medium text-sm md:text-base">健康診断で「要精密検査」と言われた</span>
+          </li>
+          <li class="flex items-start gap-3 bg-white rounded-xl px-5 py-4 shadow-sm">
+            <svg class="flex-shrink-0 mt-0.5" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span class="text-gray-700 font-medium text-sm md:text-base">以前の内視鏡検査が痛くてトラウマになっている</span>
+          </li>
+          <li class="flex items-start gap-3 bg-white rounded-xl px-5 py-4 shadow-sm">
+            <svg class="flex-shrink-0 mt-0.5" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span class="text-gray-700 font-medium text-sm md:text-base">内視鏡検査を受けたいが、怖くて踏み出せない</span>
+          </li>
+          <li class="flex items-start gap-3 bg-white rounded-xl px-5 py-4 shadow-sm">
+            <svg class="flex-shrink-0 mt-0.5" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span class="text-gray-700 font-medium text-sm md:text-base">40歳を過ぎたが、一度も内視鏡検査を受けていない</span>
+          </li>
+        </ul>
+
+        <!-- 共感メッセージ -->
+        <div class="mt-10 rounded-2xl px-6 py-7 text-center text-white" style="background:#1d4ed8;">
+          <p class="text-xl font-bold">そのお悩み、当院が解決します</p>
+          <p class="mt-2 text-sm" style="color:#bfdbfe;">苦痛の少ない検査で、安心して受診いただけます</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       中間CTA①
+  ================================================================ -->
+  <section class="py-10 bg-white">
+    <div class="max-w-xl mx-auto px-4 text-center">
+      <div class="fade-in">
+        <p class="text-gray-700 font-bold text-lg mb-1">まずはお気軽にご予約ください</p>
+        <p class="text-gray-500 text-sm mb-6">ご不安なことは予約前にお電話でも承ります</p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="#" class="inline-flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold text-base px-8 py-4 rounded-full transition-colors shadow" style="min-height:48px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            WEB予約はこちら
+          </a>
+          <a href="tel:0000000000" class="inline-flex items-center justify-center gap-2 bg-blue-800 hover:bg-blue-900 text-white font-bold text-base px-8 py-4 rounded-full transition-colors shadow" style="min-height:48px;" aria-label="電話で予約する">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.09 6.09l1.27-.85a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            電話で予約する
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       Section 3: 選ばれる理由（強み）
+  ================================================================ -->
+  <section id="reasons" class="py-16 md:py-20 bg-gray-50" aria-label="選ばれる理由">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="fade-in">
+        <h2 class="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-2">
+          うらおか内科・内視鏡クリニックが<br class="md:hidden">選ばれる理由
+        </h2>
+        <p class="text-center text-gray-500 mb-12 text-sm">患者さまの不安に寄り添い、安心・安全な検査をご提供します</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+          <!-- カード1 -->
+          <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex flex-col gap-3 hover:shadow-md transition-shadow">
+            <div class="bg-blue-50 rounded-xl p-3 w-fit">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="font-bold text-gray-800 text-sm md:text-base leading-snug">消化器内視鏡専門医による確かな検査</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">豊富な経験を持つ専門医が、丁寧かつ精度の高い検査を実施します。</p>
+          </div>
+
+          <!-- カード2 -->
+          <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex flex-col gap-3 hover:shadow-md transition-shadow">
+            <div class="bg-blue-50 rounded-xl p-3 w-fit">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <h3 class="font-bold text-gray-800 text-sm md:text-base leading-snug">鎮静剤＋炭酸ガスで痛くない・苦しくない</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">鎮静剤でウトウトしている間に検査が終了。炭酸ガス使用でお腹の張りも軽減します。</p>
+          </div>
+
+          <!-- カード3 -->
+          <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex flex-col gap-3 hover:shadow-md transition-shadow">
+            <div class="bg-blue-50 rounded-xl p-3 w-fit">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3 class="font-bold text-gray-800 text-sm md:text-base leading-snug">当日検査にも対応可能</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">お急ぎの方や、すぐに検査を受けたい方にも柔軟に対応いたします。</p>
+          </div>
+
+          <!-- カード4 -->
+          <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex flex-col gap-3 hover:shadow-md transition-shadow">
+            <div class="bg-blue-50 rounded-xl p-3 w-fit">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <h3 class="font-bold text-gray-800 text-sm md:text-base leading-snug">下剤服用の個室完備</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">プライバシーに配慮した個室で、安心して検査準備ができます。</p>
+          </div>
+
+          <!-- カード5 -->
+          <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex flex-col gap-3 hover:shadow-md transition-shadow">
+            <div class="bg-blue-50 rounded-xl p-3 w-fit">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            </div>
+            <h3 class="font-bold text-gray-800 text-sm md:text-base leading-snug">24時間WEB・LINE予約対応</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">お忙しい方でも、いつでもスマホから簡単に予約が可能です。</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       中間CTA②（Section 3後・ダーク）
+  ================================================================ -->
+  <section class="py-10" style="background:#1d4ed8;">
+    <div class="max-w-xl mx-auto px-4 text-center">
+      <div class="fade-in">
+        <p class="text-white font-bold text-lg mb-1">専門医による安心の内視鏡検査</p>
+        <p class="text-sm mb-6" style="color:#bfdbfe;">検査に関するご不安・ご質問もお気軽にどうぞ</p>
+        <a href="#" class="inline-flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold text-base px-10 py-4 rounded-full transition-colors shadow" style="min-height:48px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          WEB予約はこちら
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       Section 4: データ・客観的事実
+  ================================================================ -->
+  <section id="data" class="py-16 md:py-20" style="background:#0f172a;" aria-label="早期発見の重要性">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="fade-in">
+        <h2 class="text-2xl md:text-3xl font-bold text-center text-white mb-2">
+          早期発見が、あなたの命を守ります
+        </h2>
+        <p class="text-center text-xs mb-12" style="color:#93c5fd;">※ 以下の統計データは公的機関の情報に基づきます</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+          <div class="rounded-2xl p-8 text-center" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);">
+            <p class="font-bold mb-2" style="font-size:clamp(2rem,8vw,3rem);color:#93c5fd;">2位</p>
+            <p class="text-white font-bold mb-2 text-sm md:text-base">大腸がんのがん死亡原因</p>
+            <p class="text-xs leading-relaxed" style="color:#93c5fd;">日本人男女ともに上位（国立がん研究センター統計より）</p>
+          </div>
+
+          <div class="rounded-2xl p-8 text-center" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);">
+            <p class="font-bold mb-2" style="font-size:clamp(2rem,8vw,3rem);color:#93c5fd;">90%以上</p>
+            <p class="text-white font-bold mb-2 text-sm md:text-base">早期発見時の5年生存率</p>
+            <p class="text-xs leading-relaxed" style="color:#93c5fd;">ステージIの大腸がんにおける参考値</p>
+          </div>
+
+          <div class="rounded-2xl p-8 text-center" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);">
+            <p class="font-bold mb-2" style="font-size:clamp(2rem,8vw,3rem);color:#93c5fd;">40歳〜</p>
+            <p class="text-white font-bold mb-2 text-sm md:text-base">定期検査の推奨年齢</p>
+            <p class="text-xs leading-relaxed" style="color:#93c5fd;">リスクが高まる40代以降は特に重要</p>
+          </div>
+
+        </div>
+
+        <div class="mt-10 rounded-2xl px-6 py-5 text-center" style="background:rgba(30,58,138,.5);border:1px solid rgba(29,78,216,.5);">
+          <p class="text-white text-sm leading-relaxed">
+            大腸がんは早期発見・早期治療により、高い確率で完治が期待できるがんです。<br>
+            自覚症状がないうちから、定期的な内視鏡検査をお受けください。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       Section 5: 検査の流れ
+  ================================================================ -->
+  <section id="flow" class="py-16 md:py-20 bg-white" aria-label="検査の流れ">
+    <div class="max-w-2xl mx-auto px-4">
+      <div class="fade-in">
+        <h2 class="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-2">検査の流れ</h2>
+        <p class="text-center text-gray-500 mb-12 text-sm">はじめての方も安心。事前に流れをご確認ください</p>
+
+        <ol class="timeline-list space-y-8">
+
+          <li>
+            <div class="timeline-dot">01</div>
+            <div class="bg-gray-50 rounded-xl p-5 border border-gray-100">
+              <div class="flex items-center gap-2 mb-2">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <h3 class="font-bold text-gray-800 text-sm md:text-base">ご予約</h3>
+              </div>
+              <p class="text-gray-500 text-sm leading-relaxed">WEB・LINE・お電話で簡単にご予約いただけます。24時間受付中。当日検査のご相談もお気軽にどうぞ。</p>
+            </div>
+          </li>
+
+          <li>
+            <div class="timeline-dot">02</div>
+            <div class="bg-gray-50 rounded-xl p-5 border border-gray-100">
+              <div class="flex items-center gap-2 mb-2">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>
+                <h3 class="font-bold text-gray-800 text-sm md:text-base">事前診察</h3>
+              </div>
+              <p class="text-gray-500 text-sm leading-relaxed">問診票のご記入と、検査内容・注意事項について医師または看護師が丁寧にご説明します。</p>
+            </div>
+          </li>
+
+          <li>
+            <div class="timeline-dot">03</div>
+            <div class="bg-gray-50 rounded-xl p-5 border border-gray-100">
+              <div class="flex items-center gap-2 mb-2">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                <h3 class="font-bold text-gray-800 text-sm md:text-base">検査前日</h3>
+              </div>
+              <p class="text-gray-500 text-sm leading-relaxed">夕食まで消化の良い食事を摂っていただきます。指示に従った食事制限と下剤の準備をお願いします。</p>
+            </div>
+          </li>
+
+          <li>
+            <div class="timeline-dot">04</div>
+            <div class="bg-gray-50 rounded-xl p-5 border border-gray-100">
+              <div class="flex items-center gap-2 mb-2">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                <h3 class="font-bold text-gray-800 text-sm md:text-base">検査当日</h3>
+              </div>
+              <p class="text-gray-500 text-sm leading-relaxed">ご来院 → 腸内洗浄（個室対応）→ 鎮静剤投与 → 検査（約15〜30分）→ リカバリー（休憩30分〜1時間）</p>
+            </div>
+          </li>
+
+          <li>
+            <div class="timeline-dot">05</div>
+            <div class="bg-gray-50 rounded-xl p-5 border border-gray-100">
+              <div class="flex items-center gap-2 mb-2">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+                <h3 class="font-bold text-gray-800 text-sm md:text-base">結果説明</h3>
+              </div>
+              <p class="text-gray-500 text-sm leading-relaxed">検査終了後、当日または後日に医師が画像を見ながら丁寧に結果をご説明します。</p>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       中間CTA③（Section 5後）
+  ================================================================ -->
+  <section class="py-10" style="background:#eff6ff;">
+    <div class="max-w-xl mx-auto px-4 text-center">
+      <div class="fade-in">
+        <p class="text-gray-800 font-bold text-lg mb-1">流れを確認したら、ぜひご予約を</p>
+        <p class="text-gray-500 text-sm mb-6">当日検査のご相談もお気軽にどうぞ</p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="#" class="inline-flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold text-base px-8 py-4 rounded-full transition-colors shadow" style="min-height:48px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            WEB予約はこちら
+          </a>
+          <a href="#" class="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold text-base px-8 py-4 rounded-full transition-colors shadow" style="min-height:48px;" aria-label="LINE予約">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            LINE予約
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       Section 6: 医師紹介
+  ================================================================ -->
+  <section id="doctor" class="py-16 md:py-20" style="background:#fffbeb;" aria-label="院長ご挨拶">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="fade-in">
+        <h2 class="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-10">院長ご挨拶</h2>
+
+        <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border" style="border-color:#fef3c7;">
+          <div class="flex flex-col md:flex-row gap-8 items-start">
+
+            <!-- 医師写真プレースホルダー（ここに院長写真を差し替え） -->
+            <div class="w-full md:w-52 flex-shrink-0 rounded-xl bg-gray-200 flex items-center justify-center" style="min-height:260px;" role="img" aria-label="院長写真（後から差し替え）">
+              <span class="text-gray-400 text-sm text-center px-4 leading-relaxed">ここに<br>院長写真</span>
+            </div>
+
+            <!-- 医師情報 -->
+            <div class="flex-1">
+              <p class="text-xs font-bold uppercase tracking-widest mb-1" style="color:#1d4ed8;">DIRECTOR</p>
+              <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-1">
+                ○○ ○○ <span class="text-sm font-normal text-gray-500">院長</span>
+              </h3>
+              <p class="text-xs text-gray-400 mb-4">※ 氏名・経歴はクライアント確認後に記載</p>
+
+              <!-- 資格バッジ -->
+              <div class="flex flex-wrap gap-2 mb-5">
+                <span class="text-xs font-bold px-3 py-1 rounded-full" style="background:#dbeafe;color:#1d4ed8;">消化器内視鏡専門医</span>
+                <span class="text-xs font-bold px-3 py-1 rounded-full" style="background:#dbeafe;color:#1d4ed8;">消化器病専門医</span>
+                <span class="text-xs font-bold px-3 py-1 rounded-full" style="background:#dbeafe;color:#1d4ed8;">日本内科学会認定医</span>
+              </div>
+
+              <p class="text-gray-700 leading-relaxed text-sm md:text-base">
+                「内視鏡検査が怖い」「以前つらい思いをした」というお声を多くの患者さまからいただいてきました。
+                そのご経験を少しでも和らげるために、当院では鎮静剤と炭酸ガスを活用した、苦痛の少ない検査をご提供しています。
+                <br><br>
+                大切なのは、一人でも多くの方に定期的な検査を続けていただくこと。
+                安心して受診していただけるよう、これからも丁寧に対応してまいります。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       Section 7: 料金案内
+  ================================================================ -->
+  <section id="price" class="py-16 md:py-20 bg-gray-50" aria-label="検査費用の目安">
+    <div class="max-w-3xl mx-auto px-4">
+      <div class="fade-in">
+        <h2 class="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-2">検査費用の目安</h2>
+        <p class="text-center text-gray-500 mb-10 text-sm">保険診療のため、下記は目安です。詳細はお気軽にお問い合わせください</p>
+
+        <!-- 大腸カメラ -->
+        <h3 class="text-base md:text-lg font-bold mb-3 flex items-center gap-2" style="color:#1d4ed8;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          大腸カメラ（下部内視鏡検査）
+        </h3>
+        <div class="overflow-x-auto mb-8 rounded-xl shadow-sm border border-gray-100">
+          <table class="w-full text-sm border-collapse" role="table">
+            <thead>
+              <tr style="background:#1d4ed8;" class="text-white">
+                <th scope="col" class="px-4 py-3 text-left" style="border-radius:0.75rem 0 0 0;">検査内容</th>
+                <th scope="col" class="px-4 py-3 text-center">1割負担（目安）</th>
+                <th scope="col" class="px-4 py-3 text-center" style="border-radius:0 0.75rem 0 0;">3割負担（目安）</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-gray-100 bg-white">
+                <td class="px-4 py-4 font-medium">観察のみ</td>
+                <td class="px-4 py-4 text-center font-bold text-base md:text-lg" style="color:#1d4ed8;">約1,500〜2,000円</td>
+                <td class="px-4 py-4 text-center font-bold text-base md:text-lg" style="color:#1d4ed8;">約4,500〜6,000円</td>
+              </tr>
+              <tr style="background:#f9fafb;">
+                <td class="px-4 py-4 font-medium">ポリープ切除あり</td>
+                <td class="px-4 py-4 text-center font-bold text-base md:text-lg" style="color:#1d4ed8;">約5,000〜8,000円</td>
+                <td class="px-4 py-4 text-center font-bold text-base md:text-lg" style="color:#1d4ed8;">約15,000〜25,000円</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 胃カメラ -->
+        <h3 class="text-base md:text-lg font-bold mb-3 flex items-center gap-2" style="color:#1d4ed8;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          胃カメラ（上部内視鏡検査）
+        </h3>
+        <div class="overflow-x-auto mb-6 rounded-xl shadow-sm border border-gray-100">
+          <table class="w-full text-sm border-collapse" role="table">
+            <thead>
+              <tr style="background:#1d4ed8;" class="text-white">
+                <th scope="col" class="px-4 py-3 text-left" style="border-radius:0.75rem 0 0 0;">検査内容</th>
+                <th scope="col" class="px-4 py-3 text-center">1割負担（目安）</th>
+                <th scope="col" class="px-4 py-3 text-center" style="border-radius:0 0.75rem 0 0;">3割負担（目安）</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-gray-100 bg-white">
+                <td class="px-4 py-4 font-medium">観察のみ</td>
+                <td class="px-4 py-4 text-center font-bold text-base md:text-lg" style="color:#1d4ed8;">約1,000〜1,500円</td>
+                <td class="px-4 py-4 text-center font-bold text-base md:text-lg" style="color:#1d4ed8;">約3,000〜5,000円</td>
+              </tr>
+              <tr style="background:#f9fafb;">
+                <td class="px-4 py-4 font-medium">病理組織検査あり</td>
+                <td class="px-4 py-4 text-center font-bold text-base md:text-lg" style="color:#1d4ed8;">約3,000〜5,000円</td>
+                <td class="px-4 py-4 text-center font-bold text-base md:text-lg" style="color:#1d4ed8;">約9,000〜15,000円</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 注釈 -->
+        <div class="rounded-xl px-5 py-4 border" style="background:#eff6ff;border-color:#bfdbfe;">
+          <p class="text-xs text-gray-600 leading-relaxed">
+            ※ 上記金額は保険診療（1割・3割負担）の参考目安です。年齢・症状・検査内容によって異なります。<br>
+            ※ 鎮静剤使用後は、当日の自動車・バイク・自転車の運転ができません。公共交通機関または送迎をお願いします。<br>
+            ※ 詳細なご費用はお電話またはWEB予約時にご確認ください。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       Section 8: よくある質問（FAQ）
+  ================================================================ -->
+  <section id="faq" class="py-16 md:py-20 bg-white" aria-label="よくあるご質問">
+    <div class="max-w-2xl mx-auto px-4">
+      <div class="fade-in">
+        <h2 class="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-2">よくあるご質問</h2>
+        <p class="text-center text-gray-500 mb-10 text-sm">ご不明な点があればお気軽にお問い合わせください</p>
+
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 px-5 md:px-8 py-2">
+
+          <!-- Q1 -->
+          <div class="border-b border-gray-200">
+            <button class="accordion-btn w-full flex items-center justify-between py-5 px-1 text-left" aria-expanded="false">
+              <span class="font-bold text-gray-800 pr-4 text-sm md:text-base">Q. 検査は痛いですか？</span>
+              <svg class="accordion-chevron flex-shrink-0 text-blue-600" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion-body">
+              <p class="text-gray-600 leading-relaxed text-sm md:text-base px-1">当院では鎮静剤を使用するため、ウトウトしている間に検査が終わる方がほとんどです。また、大腸カメラでは炭酸ガスを使用しているため、お腹の張りも最小限に抑えられます。目覚めた際に検査が終わっていた、という患者さまも多くいらっしゃいます。</p>
+            </div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="border-b border-gray-200">
+            <button class="accordion-btn w-full flex items-center justify-between py-5 px-1 text-left" aria-expanded="false">
+              <span class="font-bold text-gray-800 pr-4 text-sm md:text-base">Q. 食事制限はいつからですか？</span>
+              <svg class="accordion-chevron flex-shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion-body">
+              <p class="text-gray-600 leading-relaxed text-sm md:text-base px-1">大腸カメラの場合、前日の夕食（21時頃まで）を消化の良いものにしていただきます。当日は絶食が基本です。胃カメラの場合は、検査の6時間前から絶食をお願いしています。詳しい指示は予約時にご案内します。</p>
+            </div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="border-b border-gray-200">
+            <button class="accordion-btn w-full flex items-center justify-between py-5 px-1 text-left" aria-expanded="false">
+              <span class="font-bold text-gray-800 pr-4 text-sm md:text-base">Q. 検査時間はどのくらいですか？</span>
+              <svg class="accordion-chevron flex-shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion-body">
+              <p class="text-gray-600 leading-relaxed text-sm md:text-base px-1">観察のみの場合、大腸カメラは約15〜30分、胃カメラは約5〜10分が目安です。ポリープ切除など処置を行う場合はさらに時間がかかります。鎮静剤使用後のリカバリー時間（30分〜1時間程度）を含めると、来院から帰宅まで2〜3時間程度を目安にお考えください。</p>
+            </div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="border-b border-gray-200">
+            <button class="accordion-btn w-full flex items-center justify-between py-5 px-1 text-left" aria-expanded="false">
+              <span class="font-bold text-gray-800 pr-4 text-sm md:text-base">Q. 鎮静剤を使った場合、車で帰れますか？</span>
+              <svg class="accordion-chevron flex-shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion-body">
+              <p class="text-gray-600 leading-relaxed text-sm md:text-base px-1">鎮静剤を使用した場合、検査当日は自動車・バイク・自転車の運転はできません。公共交通機関のご利用、またはご家族・お知り合いによる送迎をお願いしています。</p>
+            </div>
+          </div>
+
+          <!-- Q5 -->
+          <div class="border-b border-gray-200">
+            <button class="accordion-btn w-full flex items-center justify-between py-5 px-1 text-left" aria-expanded="false">
+              <span class="font-bold text-gray-800 pr-4 text-sm md:text-base">Q. ポリープが見つかった場合、その場で切除できますか？</span>
+              <svg class="accordion-chevron flex-shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion-body">
+              <p class="text-gray-600 leading-relaxed text-sm md:text-base px-1">小さなポリープは、検査と同時にその場で切除することが可能です（日帰り対応）。ただし、大きさや形状によっては入院設備のある医療機関へご紹介する場合もございます。事前にご相談ください。</p>
+            </div>
+          </div>
+
+          <!-- Q6 -->
+          <div>
+            <button class="accordion-btn w-full flex items-center justify-between py-5 px-1 text-left" aria-expanded="false">
+              <span class="font-bold text-gray-800 pr-4 text-sm md:text-base">Q. 院内で下剤を飲むことはできますか？</span>
+              <svg class="accordion-chevron flex-shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion-body">
+              <p class="text-gray-600 leading-relaxed text-sm md:text-base px-1">はい、当院では下剤服用用の個室をご用意しています。ご自宅での服用が難しい方や、プライバシーを重視される方も安心してご利用いただけます。</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       Section 9: 予約CTA（フッターCTA）+ アクセス
+  ================================================================ -->
+  <section id="cta" class="py-16 md:py-20" style="background:linear-gradient(135deg,#1e3a8a 0%,#1d4ed8 100%);" aria-label="ご予約・アクセス">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <div class="fade-in">
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-2">まずはお気軽にご予約ください</h2>
+        <p class="text-sm mb-10" style="color:#bfdbfe;">WEB・LINE・お電話でいつでもご予約・ご相談を受け付けています</p>
+
+        <!-- CTAボタン3つ -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <a href="#" class="inline-flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold text-base md:text-lg px-8 py-5 rounded-full transition-colors shadow-lg" style="min-height:56px;" aria-label="WEB予約はこちら（24時間対応）">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            WEB予約はこちら
+          </a>
+          <a href="#" class="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold text-base md:text-lg px-8 py-5 rounded-full transition-colors shadow-lg" style="min-height:56px;" aria-label="LINE予約">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            LINE予約
+          </a>
+          <a href="tel:0000000000" class="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-50 text-blue-800 font-bold text-base md:text-lg px-8 py-5 rounded-full transition-colors shadow-lg" style="min-height:56px;" aria-label="電話で予約する（タップで発信）">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.09 6.09l1.27-.85a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            電話で予約
+          </a>
+        </div>
+
+        <!-- 診療情報・アクセス -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+          <div class="rounded-2xl px-6 py-5" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);">
+            <h3 class="text-white font-bold mb-3 text-xs uppercase tracking-widest">診療時間</h3>
+            <table class="text-sm w-full" style="color:#bfdbfe;">
+              <tbody>
+                <tr><td class="pr-4 py-1 font-medium">月・火・水・金</td><td>9:00〜18:00</td></tr>
+                <tr><td class="pr-4 py-1 font-medium">木・土</td><td>9:00〜13:00</td></tr>
+                <tr><td class="pr-4 py-1 font-medium" style="color:#fca5a5;">休診日</td><td style="color:#fca5a5;">日曜・祝日</td></tr>
+              </tbody>
+            </table>
+            <p class="text-xs mt-2" style="color:#93c5fd;">※ 診療時間はクライアント確認後に更新</p>
+          </div>
+
+          <div class="rounded-2xl px-6 py-5" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);">
+            <h3 class="text-white font-bold mb-3 text-xs uppercase tracking-widest">アクセス</h3>
+            <address class="not-italic text-sm leading-relaxed" style="color:#bfdbfe;">
+              〒000-0000<br>
+              ○○県○○市○○町0-0-0<br>
+              <span class="text-xs" style="color:#93c5fd;">※ 住所はクライアント確認後に更新</span>
+            </address>
+            <p class="text-sm mt-2" style="color:#bfdbfe;">最寄駅：○○駅 徒歩○分</p>
+            <a href="tel:0000000000" class="inline-flex items-center gap-1 mt-3 text-white font-bold text-base hover:underline" aria-label="電話番号（タップで発信）">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.09 6.09l1.27-.85a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              000-000-0000
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       フッター
+  ================================================================ -->
+  <footer class="py-6 text-center text-xs" style="background:#111827;color:#9ca3af;">
+    <p class="mb-1">&copy; <span id="year"></span> うらおか内科・内視鏡クリニック All Rights Reserved.</p>
+    <p>当ページは医療広告ガイドラインに基づき作成されています。</p>
+  </footer>
+
+
+  <!-- ================================================================
+       固定フッターCTA（スマートフォン専用）
+  ================================================================ -->
+  <div class="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white border-t border-gray-200 shadow-2xl" role="navigation" aria-label="クイック予約">
+    <div class="flex">
+      <a href="#" class="flex-1 flex flex-col items-center justify-center gap-1 bg-orange-500 active:bg-orange-600 text-white py-3 text-xs font-bold" style="min-height:56px;" aria-label="WEB予約">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        WEB予約
+      </a>
+      <a href="#" class="flex-1 flex flex-col items-center justify-center gap-1 bg-green-500 active:bg-green-600 text-white py-3 text-xs font-bold" style="min-height:56px;" aria-label="LINE予約">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        LINE予約
+      </a>
+      <a href="tel:0000000000" class="flex-1 flex flex-col items-center justify-center gap-1 bg-blue-800 active:bg-blue-900 text-white py-3 text-xs font-bold" style="min-height:56px;" aria-label="電話する">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.09 6.09l1.27-.85a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        電話する
+      </a>
+    </div>
+  </div>
+
+
+  <!-- ================================================================
+       JavaScript
+  ================================================================ -->
+  <script>
+    // 年号自動更新
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ===== ヘッダー スクロール挙動 =====
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', function () {
+      header.classList.toggle('scrolled', window.scrollY > 80);
+    }, { passive: true });
+
+    // ===== フェードイン (Intersection Observer) =====
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const fadeObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          fadeObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    fadeEls.forEach(function (el) { fadeObserver.observe(el); });
+
+    // ===== アコーディオン =====
+    document.querySelectorAll('.accordion-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var body = btn.nextElementSibling;
+        var isOpen = body.classList.contains('open');
+        // 他を全て閉じる
+        document.querySelectorAll('.accordion-body.open').forEach(function (b) {
+          b.classList.remove('open');
+          b.previousElementSibling.setAttribute('aria-expanded', 'false');
+        });
+        // 自分を開く/閉じる
+        if (!isOpen) {
+          body.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // ===== スムーススクロール（ヘッダーのWEB予約ボタン） =====
+    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        var hash = link.getAttribute('href');
+        if (hash.length > 1) {
+          var target = document.querySelector(hash);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
