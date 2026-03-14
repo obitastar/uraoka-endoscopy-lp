@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:colonoscopy.nakajima-clinic.com)",
+      "WebFetch(domain:tenpakubashi-endoscope.or.jp)",
+      "WebFetch(domain:uraoka-clinic.jp)"
+    ]
+  }
+}
