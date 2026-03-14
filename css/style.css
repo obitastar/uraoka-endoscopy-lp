@@ -304,36 +304,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 @media (max-width: 767px) {
-  #hero {
-    min-height: auto;
-    display: block;
-    padding-top: 64px;
-  }
-  .hero-bg {
-    position: relative;
-    inset: auto;
-    height: auto;
-    overflow: visible;
-  }
   .hero-bg img {
-    width: 100%;
+    width: auto;
     height: auto;
-    max-width: 100%;
-    object-fit: initial;
-    flex-shrink: initial;
-  }
-  .hero-overlay {
-    display: none;
-  }
-  .hero-content {
-    position: relative;
-    background: #0f172a;
-    padding: 32px 20px 80px;
-    max-width: none;
-    margin: 0;
-  }
-  .hero-scroll {
-    display: none;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    object-position: top center;
   }
 }
 
