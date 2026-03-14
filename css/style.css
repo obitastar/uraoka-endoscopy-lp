@@ -303,10 +303,38 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   50%      { transform: translateX(-50%) translateY(8px); }
 }
 
-@media (max-width: 680px) {
-  .hero-title { letter-spacing: -.01em; }
-  .hero-cta { flex-direction: column; align-items: center; }
-  .hero-cta .btn { width: 100%; max-width: 320px; }
+@media (max-width: 767px) {
+  #hero {
+    min-height: auto;
+    display: block;
+    padding-top: 64px;
+  }
+  .hero-bg {
+    position: relative;
+    inset: auto;
+    height: auto;
+    overflow: visible;
+  }
+  .hero-bg img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: initial;
+    flex-shrink: initial;
+  }
+  .hero-overlay {
+    display: none;
+  }
+  .hero-content {
+    position: relative;
+    background: #0f172a;
+    padding: 32px 20px 80px;
+    max-width: none;
+    margin: 0;
+  }
+  .hero-scroll {
+    display: none;
+  }
 }
 
 /* ---------- Section 2: 悩み提起 ---------- */
@@ -629,11 +657,16 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ---------- Section 4: データ ---------- */
 #data {
   background-color: var(--bg-dark);
-  background-image: url('../写真/scoop_05.jpg');
+  background-image: url('../images/scoop_05.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   position: relative;
+}
+@media (max-width: 767px) {
+  #data {
+    background-attachment: scroll;
+  }
 }
 #data::before {
   content: '';
@@ -1169,7 +1202,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: flex; align-items: center; justify-content: center;
   position: relative;
   overflow: hidden;
-  background-image: url('../写真/scoop_04.jpg');
+  background-image: url('../images/scoop_04.jpg');
   background-size: cover;
   background-position: center top;
 }
