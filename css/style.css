@@ -212,18 +212,18 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   position: absolute; inset: 0;
   background:
     linear-gradient(to right,
-      #0f172a 0%,
-      rgba(15,23,42,.6) 18%,
+      rgba(15,23,42,.65) 0%,
+      rgba(15,23,42,.35) 18%,
       rgba(15,23,42,0) 38%,
       rgba(15,23,42,0) 62%,
-      rgba(15,23,42,.6) 82%,
-      #0f172a 100%
+      rgba(15,23,42,.35) 82%,
+      rgba(15,23,42,.65) 100%
     ),
     linear-gradient(to bottom,
-      rgba(15,23,42,.5) 0%,
+      rgba(15,23,42,.3) 0%,
       rgba(15,23,42,0) 25%,
       rgba(15,23,42,0) 60%,
-      rgba(15,23,42,.75) 100%
+      rgba(15,23,42,.55) 100%
     );
 }
 
@@ -326,8 +326,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* 左右分割ラッパー */
 .pain-inner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 680px;
+  grid-template-columns: 1fr;
+  min-height: auto;
 }
 
 /* 左：医師写真カラム */
@@ -355,11 +355,15 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* 右：コンテンツカラム */
 .pain-content-col {
   background: #f0f9ff;
-  padding: 72px 56px 72px 48px;
+  padding: 72px 80px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 36px;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* ヘッド */
@@ -445,11 +449,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .pain-cards { grid-template-columns: 1fr; }
 }
 @media (max-width: 680px) {
-  .pain-inner { grid-template-columns: 1fr; }
-  .pain-photo-col { height: 280px; }
-  .pain-photo-overlay {
-    background: linear-gradient(to bottom, rgba(240,249,255,0) 40%, rgba(240,249,255,.9) 100%);
-  }
   .pain-content-col { padding: 40px 24px; }
   .pain-cta { flex-direction: column; align-items: flex-start; }
 }
@@ -595,7 +594,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .rc-4 p  { color: #64748b; }
 .rc-4 .rc-num { color: rgba(0,0,0,.05); }
 
-/* カード5: アクセント */
+/* カード5 */
 .rc-5 {
   grid-column: 9 / 13;
   background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
@@ -606,6 +605,20 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .rc-5 h3 { color: #fff; }
 .rc-5 p  { color: rgba(255,255,255,.85); }
 
+/* カード6: 全幅アクセント */
+.rc-6 {
+  grid-column: 1 / 13;
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
+  box-shadow: 0 8px 40px rgba(15,23,42,.5);
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.rc-6:hover { box-shadow: 0 16px 56px rgba(15,23,42,.65); }
+.rc-6 .rc-icon { background: rgba(255,255,255,.15); color: #fff; margin-bottom: 0; flex-shrink: 0; }
+.rc-6 h3 { color: #fff; font-size: 1.15rem; }
+.rc-6 p  { color: rgba(255,255,255,.82); }
+
 /* レスポンシブ */
 @media (max-width: 900px) {
   .rc-1 { grid-column: 1 / 13; }
@@ -613,9 +626,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .rc-3 { grid-column: 7 / 13; }
   .rc-4 { grid-column: 1 / 7; }
   .rc-5 { grid-column: 7 / 13; }
+  .rc-6 { grid-column: 1 / 13; flex-direction: column; align-items: flex-start; gap: 0; }
+  .rc-6 .rc-icon { margin-bottom: 20px; }
 }
 @media (max-width: 560px) {
-  .rc-1, .rc-2, .rc-3, .rc-4, .rc-5 { grid-column: 1 / 13; }
+  .rc-1, .rc-2, .rc-3, .rc-4, .rc-5, .rc-6 { grid-column: 1 / 13; }
+  .rc-6 { flex-direction: column; align-items: flex-start; gap: 0; }
+  .rc-6 .rc-icon { margin-bottom: 20px; }
   .rc { padding: 28px 24px; }
   .rc-num { font-size: 6rem; }
 }
@@ -690,6 +707,14 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 10px;
+}
+.data-subtitle-main {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: rgba(255,255,255,.88);
+  margin-bottom: 12px;
+  line-height: 1.6;
+  text-align: center;
 }
 .data-lead {
   color: rgba(255,255,255,.62);
