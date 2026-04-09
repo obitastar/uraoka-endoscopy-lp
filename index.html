@@ -70,55 +70,70 @@
      Section 1: ファーストビュー（Hero）
      ============================================================ -->
 <section id="hero" aria-label="ファーストビュー">
-  <!-- 背景 -->
-  <div class="hero-bg" role="presentation">
-    <img src="images/scoop_01.jpg" alt="" aria-hidden="true">
-  </div>
-  <div class="hero-overlay" role="presentation"></div>
 
-  <!-- パーティクル -->
-  <div class="hero-particles" aria-hidden="true"></div>
+  <!-- 2分割背景 -->
+  <div class="hero-bg-left" role="presentation" aria-hidden="true"></div>
+  <div class="hero-bg-right" role="presentation" aria-hidden="true"></div>
+  <div class="hero-overlay" role="presentation" aria-hidden="true"></div>
 
-  <!-- コンテンツ -->
-  <div class="hero-content">
-    <!-- バッジ -->
-    <div class="hero-badges">
-      <span class="hero-badge">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        専門医在籍
-      </span>
-      <span class="hero-badge">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-        鎮静剤使用
-      </span>
-      <span class="hero-badge">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        当日検査対応
-      </span>
-    </div>
+  <!-- 中央コンテンツ -->
+  <div class="hero-content-wrap">
+    <div class="hero-left">
 
-    <!-- タイトル -->
-    <h1 class="hero-title">
-      寝ている間に終わる、<br>
-      <span class="accent">痛くない内視鏡検査</span>
-    </h1>
+      <div class="hero-accent-bar" aria-hidden="true"></div>
 
-    <!-- サブコピー -->
-    <p class="hero-sub">
-      消化器内視鏡専門医が、鎮静剤を使用した<br>
-      苦痛の少ない検査を行います
-    </p>
+      <div class="hero-badges">
+        <span class="hero-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          専門医在籍
+        </span>
+        <span class="hero-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          鎮静剤使用
+        </span>
+        <span class="hero-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          当日検査対応
+        </span>
+      </div>
 
-    <!-- CTA -->
-    <div class="hero-cta">
-      <a href="#reservation" class="btn btn-primary btn-lg">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        24時間WEB予約
-      </a>
-      <a href="tel:000-0000-0000" class="btn btn-white btn-lg">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.33 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        電話予約
-      </a>
+      <h1 class="hero-title">
+        寝ている間に終わる、<br>
+        <span class="accent">痛くない内視鏡検査</span>
+      </h1>
+
+      <p class="hero-sub">
+        消化器内視鏡専門医が、鎮静剤を使用した<br>苦痛の少ない検査を行います
+      </p>
+
+      <div class="hero-cta">
+        <a href="#reservation" class="btn btn-primary btn-lg">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          24時間WEB予約
+        </a>
+        <a href="tel:000-0000-0000" class="btn btn-outline btn-lg">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.33 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          電話予約
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <strong>無痛</strong>
+          <span>眠った状態で検査</span>
+        </div>
+        <div class="hero-stat-div" aria-hidden="true"></div>
+        <div class="hero-stat">
+          <strong>同日</strong>
+          <span>胃・大腸カメラ可</span>
+        </div>
+        <div class="hero-stat-div" aria-hidden="true"></div>
+        <div class="hero-stat">
+          <strong>24h</strong>
+          <span>WEB予約受付中</span>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -127,6 +142,7 @@
     <span>SCROLL</span>
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
   </div>
+
 </section>
 
 
@@ -137,42 +153,86 @@
 
   <div class="pain-inner">
 
-    <!-- コンテンツ -->
+    <!-- コンテンツ（1カラム） -->
     <div class="pain-content-col">
 
       <div class="pain-head fade-in">
-        <p class="pain-eyebrow">症状チェック</p>
+        <p class="pain-eyebrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          症状チェック
+        </p>
         <h2 class="pain-title" id="pain-title">
-          こんな症状や<br>お悩み、<br><em>ありませんか？</em>
+          こんな症状や お悩み、<br><em>ありませんか？</em>
         </h2>
-        <p class="pain-subtitle">一つでも当てはまる方は、<br>早めの内視鏡検査をおすすめします。</p>
+        <p class="pain-subtitle">一つでも当てはまる方は、早めの内視鏡検査をおすすめします。</p>
+      </div>
+
+      <!-- ？マーク浮遊アニメーション -->
+      <div class="pain-floats" aria-hidden="true">
+        <span class="pf pf1">?</span>
+        <span class="pf pf2">?</span>
+        <span class="pf pf3">?</span>
+        <span class="pf pf4">?</span>
+        <span class="pf pf5">?</span>
+        <span class="pf pf6">?</span>
+        <span class="pf pf7">?</span>
+        <span class="pf pf8">?</span>
+        <span class="pf pf9">?</span>
+        <span class="pf pf10">?</span>
+        <span class="pf pf11">?</span>
+        <span class="pf pf12">?</span>
       </div>
 
       <ul class="pain-cards fade-in delay-2">
+
+        <!-- 01: お腹の張り・痛み → 心拍波形（身体の異常） -->
         <li class="pain-card">
-          <span class="pain-card-no" aria-hidden="true">01</span>
+          <span class="pain-card-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </span>
           <span class="pain-card-text"><strong>お腹の張り・痛み</strong>が続いている</span>
         </li>
+
+        <!-- 02: 便に血が混じる → ドロップ（血） -->
         <li class="pain-card">
-          <span class="pain-card-no" aria-hidden="true">02</span>
+          <span class="pain-card-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+          </span>
           <span class="pain-card-text">便に<strong>血が混じる</strong>ことがある</span>
         </li>
+
+        <!-- 03: 要精密検査 → クリップボード -->
         <li class="pain-card">
-          <span class="pain-card-no" aria-hidden="true">03</span>
+          <span class="pain-card-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg>
+          </span>
           <span class="pain-card-text">健康診断で<strong>「要精密検査」</strong>と言われた</span>
         </li>
+
+        <!-- 04: 痛くてトラウマ → 稲妻（ショック・痛み） -->
         <li class="pain-card">
-          <span class="pain-card-no" aria-hidden="true">04</span>
+          <span class="pain-card-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </span>
           <span class="pain-card-text">以前の検査が<strong>痛くてトラウマ</strong>になっている</span>
         </li>
+
+        <!-- 05: 怖くて踏み出せない → 錠前（不安・踏み出せない） -->
         <li class="pain-card">
-          <span class="pain-card-no" aria-hidden="true">05</span>
+          <span class="pain-card-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </span>
           <span class="pain-card-text">検査を受けたいが<strong>怖くて踏み出せない</strong></span>
         </li>
+
+        <!-- 06: 40歳以上・未受診 → カレンダー -->
         <li class="pain-card">
-          <span class="pain-card-no" aria-hidden="true">06</span>
+          <span class="pain-card-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="15" x2="8" y2="15"/><line x1="12" y1="15" x2="12" y2="15"/></svg>
+          </span>
           <span class="pain-card-text"><strong>40歳以上</strong>だが一度も検査を受けていない</span>
         </li>
+
       </ul>
 
       <div class="pain-cta fade-in delay-3">
@@ -204,9 +264,9 @@
       <!-- カード1: 専門医 -->
       <div class="rc rc-1 fade-in delay-1">
         <div class="rc-icon rc-icon--photo">
-          <img src="images/scoop_04.jpg" alt="院長">
+          <img src="images/doctor.jpg" alt="院長">
         </div>
-        <h3>専門医による<br>確かな検査</h3>
+        <h3>専門医による確かな検査</h3>
         <p>豊富な経験を持つ消化器内視鏡専門医が、丁寧かつ精度の高い検査を実施します。専門的な知識と技術で、見落としのない検査をご提供します。</p>
         <span class="rc-num" aria-hidden="true">01</span>
       </div>
@@ -216,7 +276,7 @@
         <div class="rc-icon rc-icon--photo">
           <img src="images/scoop_02.jpg" alt="内視鏡システム">
         </div>
-        <h3>胃カメラと大腸カメラの<br>同日検査が可能</h3>
+        <h3>胃カメラと大腸カメラの同日検査が可能</h3>
         <p>胃カメラと大腸カメラを同じ日に受けられます。来院回数を減らし、お忙しい方にも対応します。</p>
         <span class="rc-num" aria-hidden="true">02</span>
       </div>
@@ -226,7 +286,7 @@
         <div class="rc-icon rc-icon--photo">
           <img src="images/scoop_03.jpg" alt="診察の様子">
         </div>
-        <h3>鎮静剤＋炭酸ガスで<br>痛くない・苦しくない</h3>
+        <h3>鎮静剤＋炭酸ガスで痛くない・苦しくない</h3>
         <p>鎮静剤でウトウトしている間に検査が終了。炭酸ガス使用でお腹の張りも軽減します。</p>
         <span class="rc-num" aria-hidden="true">03</span>
       </div>
@@ -234,9 +294,9 @@
       <!-- カード4: 当日検査 -->
       <div class="rc rc-4 fade-in delay-4">
         <div class="rc-icon rc-icon--photo">
-          <img src="images/scoop_04.jpg" alt="院長">
+          <img src="images/doctor.jpg" alt="院長">
         </div>
-        <h3>当日検査にも<br>対応</h3>
+        <h3>当日検査にも対応</h3>
         <p>お急ぎの方や、すぐに検査を受けたい方にも柔軟に対応いたします。予約当日の検査も承ります。</p>
         <span class="rc-num" aria-hidden="true">04</span>
       </div>
@@ -244,20 +304,22 @@
       <!-- カード5: 下剤 -->
       <div class="rc rc-5 fade-in delay-5">
         <div class="rc-icon rc-icon--photo">
-          <img src="images/scoop_04.jpg" alt="院長">
+          <img src="images/doctor.jpg" alt="院長">
         </div>
-        <h3>下剤服用は<br>院内・自宅を選択可能</h3>
+        <h3>下剤服用は院内・自宅を選択可能</h3>
         <p>院内の専用スペースで準備を行うことができます。ご自宅での服用も選択いただけます。</p>
         <span class="rc-num" aria-hidden="true">05</span>
       </div>
 
       <!-- カード6: アフターケア -->
       <div class="rc rc-6 fade-in delay-5">
-        <div class="rc-icon rc-icon--photo">
-          <img src="images/scoop_04.jpg" alt="院長">
+        <div class="rc-6-body">
+          <h3>検査で終わらないケア</h3>
+          <p>検査だけで終わらず、その後の通院もフォローします。継続的なサポートで、患者さまの健康を守ります。</p>
         </div>
-        <h3>検査で終わらない<br>ケア</h3>
-        <p>検査だけで終わらず、その後の通院もフォローします。継続的なサポートで、患者さまの健康を守ります。</p>
+        <div class="rc-icon rc-icon--photo">
+          <img src="images/reception.jpg" alt="クリニック内観">
+        </div>
         <span class="rc-num" aria-hidden="true">06</span>
       </div>
 
