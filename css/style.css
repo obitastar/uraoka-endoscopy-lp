@@ -181,15 +181,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .btn-white:hover { background: var(--primary-light); transform: translateY(-1px); }
 
-/* ---------- Section 1: Hero ---------- */
 /* ============================================================
-   Hero
-   ============================================================ */
-/* ============================================================
-   Section 1: Hero — scoop_01（左）+ iin（右）2分割 + 中央テキスト
-   ============================================================ */
-/* ============================================================
-   Section 1: Hero — Option A (scoop_01左 + iin右 2分割 + 中央テキスト)
+   Section 1: Hero — 高インパクト LP版
    ============================================================ */
 #hero {
   position: relative;
@@ -207,7 +200,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   background-size: cover;
   background-position: center;
   z-index: 0;
+  transform: scale(1.04);
+  transition: transform 8s ease;
 }
+#hero.loaded .hero-bg-left { transform: scale(1); }
+
 /* 右半分：iin.jpg */
 .hero-bg-right {
   position: absolute;
@@ -216,25 +213,28 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   background-size: cover;
   background-position: center;
   z-index: 0;
+  transform: scale(1.04);
+  transition: transform 8s ease;
 }
+#hero.loaded .hero-bg-right { transform: scale(1); }
 
-/* オーバーレイ */
+/* オーバーレイ：背景が透けつつテキストが読めるグラデーション */
 .hero-overlay {
   position: absolute; inset: 0;
   background: linear-gradient(
-    to bottom,
-    rgba(6,18,38,.18) 0%,
-    rgba(6,18,38,.42) 45%,
-    rgba(6,18,38,.32) 100%
+    160deg,
+    rgba(4,14,40,.18) 0%,
+    rgba(4,14,40,.08) 45%,
+    rgba(4,14,40,.20) 100%
   );
   z-index: 1;
 }
 
-/* コンテンツラッパー — 中央揃え */
+/* コンテンツラッパー */
 .hero-content-wrap {
   position: relative; z-index: 2;
   width: 100%;
-  padding: 108px 24px 80px;
+  padding: 120px 24px 100px;
   display: flex;
   justify-content: center;
 }
@@ -242,87 +242,163 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* テキストカラム */
 .hero-left {
   width: 100%;
-  max-width: 640px;
+  max-width: 760px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 28px;
   align-items: center;
   text-align: center;
 }
 
+/* アイキャッチラベル */
+.hero-eyebrow {
+  display: flex; align-items: center; gap: 12px;
+  color: rgba(255,255,255,.85);
+  font-size: .75rem; font-weight: 600; letter-spacing: .12em;
+  white-space: nowrap;
+}
+.hero-eyebrow-text { white-space: normal; letter-spacing: .06em; }
+.hero-eyebrow-line {
+  flex: 1; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.45), transparent);
+  min-width: 28px;
+}
+
+/* PCでは改行不要なsp専用<br>を非表示 */
+.hero-br-sp { display: none; }
+
+/* アクセントバー */
 .hero-accent-bar {
-  width: 48px; height: 5px;
-  background: linear-gradient(90deg, #38bdf8, #fff);
+  width: 72px; height: 5px;
+  background: linear-gradient(90deg, #f97316, #fbbf24);
   border-radius: 3px;
+  box-shadow: 0 0 14px rgba(249,115,22,.65);
 }
 
 /* バッジ */
 .hero-badges {
-  display: flex; flex-wrap: wrap; gap: 8px;
+  display: flex; flex-wrap: wrap; gap: 10px;
   justify-content: center;
 }
 .hero-badge {
-  display: inline-flex; align-items: center; gap: 6px;
-  background: rgba(255,255,255,.92);
-  border: none;
+  display: inline-flex; align-items: center; gap: 7px;
+  background: rgba(249,115,22,.92);
+  border: 1px solid rgba(255,255,255,.4);
   border-radius: 999px;
-  padding: 7px 18px;
-  font-size: .78rem; font-weight: 700;
-  color: #1e3a5f;
-  box-shadow: 0 2px 10px rgba(0,0,0,.15);
+  padding: 9px 20px;
+  font-size: .82rem; font-weight: 700;
+  color: #fff;
+  letter-spacing: .03em;
+  box-shadow: 0 3px 14px rgba(0,0,0,.3);
 }
-.hero-badge svg { color: var(--primary); }
+.hero-badge:nth-child(2) {
+  background: rgba(2,132,199,.92);
+}
+.hero-badge:nth-child(3) {
+  background: rgba(22,163,74,.92);
+}
+.hero-badge svg { color: #fff; }
 
 /* タイトル */
 .hero-title {
-  font-size: clamp(1.9rem, 3.8vw, 3.1rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
   font-weight: 900;
-  line-height: 1.2;
-  letter-spacing: -.02em;
-  color: #fff;
-  text-shadow: 0 2px 24px rgba(0,0,0,.55), 0 0 60px rgba(0,0,0,.3);
-  margin-bottom: 0;
+  letter-spacing: -.03em;
+  margin: 4px 0 32px;
 }
+/* 「寝ている間に終わる、」：白フォント＋黒ストローク・やや小さめ */
+.hero-title-box {
+  display: block;
+  font-size: clamp(1.7rem, 4vw, 3rem);
+  color: #fff;
+  -webkit-text-stroke: 2px rgba(0,0,0,.75);
+  paint-order: stroke fill;
+  text-shadow: 0 3px 20px rgba(0,0,0,.65);
+  line-height: 1.2;
+}
+/* 「痛くない内視鏡検査」：メインキャッチ・大きく鮮やか */
 .hero-title .accent {
-  color: #7dd3fc;
+  display: block;
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  color: #fbbf24;
+  text-shadow: 0 3px 24px rgba(0,0,0,.75), 0 1px 4px rgba(0,0,0,.8);
+  line-height: 1.1;
 }
 
-/* サブコピー */
+/* サブコピー：ダークガラスカード */
 .hero-sub {
-  font-size: clamp(.92rem, 1.4vw, 1.08rem);
-  color: #fff;
-  text-shadow: 0 1px 12px rgba(0,0,0,.6);
-  line-height: 1.85;
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  color: rgba(255,255,255,.95);
+  line-height: 1.9;
   margin: 0;
+  background: rgba(0,0,0,.32);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: var(--radius);
+  padding: 16px 28px;
 }
 
 /* CTA */
 .hero-cta {
-  display: flex; flex-wrap: wrap; gap: 12px;
+  display: flex; flex-wrap: wrap; gap: 14px;
   justify-content: center;
+}
+.hero-cta .btn-primary {
+  font-size: 1.12rem;
+  padding: 20px 48px;
+  min-height: 66px;
+  border-radius: 14px;
+  box-shadow: 0 6px 32px rgba(249,115,22,.65);
+  animation: hero-cta-pulse 2.6s ease infinite;
+}
+@keyframes hero-cta-pulse {
+  0%, 100% { box-shadow: 0 6px 32px rgba(249,115,22,.65); }
+  50%       { box-shadow: 0 6px 44px rgba(249,115,22,.9), 0 0 0 12px rgba(249,115,22,.14); }
+}
+.hero-cta .btn-outline {
+  font-size: 1.12rem;
+  padding: 20px 48px;
+  min-height: 66px;
+  border-radius: 14px;
+  background: #fff;
+  border: 2px solid var(--primary);
+  color: var(--primary-dark);
+}
+.hero-cta .btn-outline:hover {
+  background: var(--primary-light);
 }
 
 /* スタッツ */
 .hero-stats {
   display: flex;
   align-items: center;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255,255,255,.35);
   width: 100%;
+  background: rgba(0,0,0,.38);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: var(--radius);
+  padding: 20px 28px;
 }
 .hero-stat { flex: 1; text-align: center; }
 .hero-stat strong {
   display: block;
-  font-size: 1.5rem; font-weight: 900;
-  color: #7dd3fc;
+  font-size: 2.1rem; font-weight: 900;
+  color: #fbbf24;
   line-height: 1; margin-bottom: 6px;
+  text-shadow: 0 0 20px rgba(251,191,36,.5);
 }
 .hero-stat span {
-  font-size: .72rem; color: rgba(255,255,255,.65); line-height: 1.5;
+  font-size: .75rem; color: rgba(255,255,255,.8); line-height: 1.5;
+  font-weight: 500;
 }
 .hero-stat-div {
-  width: 1px; height: 36px;
-  background: rgba(255,255,255,.2);
+  width: 1px; height: 42px;
+  background: rgba(255,255,255,.22);
   flex-shrink: 0;
 }
 
@@ -331,7 +407,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   position: absolute;
   bottom: 28px; left: 50%; transform: translateX(-50%);
   display: flex; flex-direction: column; align-items: center; gap: 8px;
-  color: rgba(255,255,255,.6); font-size: .7rem; letter-spacing: .1em;
+  color: rgba(255,255,255,.7); font-size: .72rem; letter-spacing: .15em;
   z-index: 3;
   animation: bounce 2s ease infinite;
 }
@@ -340,12 +416,31 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   50%      { transform: translateX(-50%) translateY(8px); }
 }
 
+/* ---- レスポンシブ: Hero ---- */
 @media (max-width: 767px) {
   .hero-bg-left { width: 100%; }
   .hero-bg-right { display: none; }
-  .hero-content-wrap { padding: 88px 20px 80px; }
-  .hero-left { gap: 20px; }
+  .hero-content-wrap { padding: 100px 20px 90px; }
+  .hero-left { gap: 22px; max-width: 100%; }
   .hero-scroll { display: none; }
+  .hero-title-box { font-size: clamp(1.4rem, 6vw, 2rem); }
+  .hero-title .accent { font-size: clamp(2rem, 10vw, 3.2rem); }
+  .hero-sub { font-size: .95rem; padding: 14px 18px; }
+  .hero-badge { font-size: .79rem; padding: 8px 16px; }
+  .hero-stats { padding: 16px 16px; }
+  .hero-stat strong { font-size: 1.8rem; }
+  .hero-stat span { font-size: .7rem; }
+  .hero-cta .btn-primary,
+  .hero-cta .btn-outline { font-size: 1rem; padding: 17px 36px; min-height: 58px; }
+  .hero-eyebrow { font-size: .7rem; gap: 8px; }
+  .hero-br-sp { display: inline; }
+}
+@media (max-width: 480px) {
+  .hero-title-box { font-size: clamp(1.25rem, 7vw, 1.7rem); }
+  .hero-title .accent { font-size: clamp(1.9rem, 11vw, 2.8rem); }
+  .hero-badges { gap: 8px; }
+  .hero-badge { font-size: .76rem; padding: 7px 14px; }
+  .hero-eyebrow-line { display: none; }
 }
 
 /* ---------- Section 2: 悩み提起 ---------- */
@@ -1600,8 +1695,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   /* ヘッダー */
   .btn-header-tel { display: none; }
 
-  /* Hero */
-  .hero-title { letter-spacing: -.01em; }
+  /* Hero — グローバルブレークポイント上書き不要（ヒーロー内ブロックで定義済み） */
 
   /* 理由カード */
   .reasons-grid { grid-template-columns: 1fr; }

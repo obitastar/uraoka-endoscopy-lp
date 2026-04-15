@@ -282,3 +282,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+
+/* ============================================================
+   Hero: ページロード後に .loaded クラスを付けて背景ズームアウト開始
+   ============================================================ */
+(function () {
+  var hero = document.getElementById('hero');
+  if (!hero) return;
+  requestAnimationFrame(function () {
+    requestAnimationFrame(function () {
+      hero.classList.add('loaded');
+    });
+  });
+})();
