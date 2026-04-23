@@ -192,11 +192,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   align-items: center;
 }
 
-/* 左半分：scoop_01.jpg */
+/* 左半分 */
 .hero-bg-left {
   position: absolute;
   top: 0; bottom: 0; left: 0; width: 50%;
-  background-image: url('../images/scoop_01.jpg');
+  background-image: url('../images/waiting_room.jpg');
   background-size: cover;
   background-position: center;
   z-index: 0;
@@ -205,11 +205,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 #hero.loaded .hero-bg-left { transform: scale(1); }
 
-/* 右半分：iin.jpg */
+/* 右半分 */
 .hero-bg-right {
   position: absolute;
   top: 0; bottom: 0; right: 0; width: 50%;
-  background-image: url('../images/iin.jpg');
+  background-image: url('../images/scoop_01.jpg');
   background-size: cover;
   background-position: center;
   z-index: 0;
@@ -218,14 +218,14 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 #hero.loaded .hero-bg-right { transform: scale(1); }
 
-/* オーバーレイ：背景が透けつつテキストが読めるグラデーション */
+/* オーバーレイ：明るく清潔感のある白ベース */
 .hero-overlay {
   position: absolute; inset: 0;
   background: linear-gradient(
     160deg,
-    rgba(4,14,40,.18) 0%,
-    rgba(4,14,40,.08) 45%,
-    rgba(4,14,40,.20) 100%
+    rgba(255,255,255,.55) 0%,
+    rgba(240,249,255,.45) 45%,
+    rgba(224,242,254,.40) 100%
   );
   z-index: 1;
 }
@@ -253,14 +253,14 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* アイキャッチラベル */
 .hero-eyebrow {
   display: flex; align-items: center; gap: 12px;
-  color: rgba(255,255,255,.85);
+  color: var(--primary-dark);
   font-size: .75rem; font-weight: 600; letter-spacing: .12em;
   white-space: nowrap;
 }
 .hero-eyebrow-text { white-space: normal; letter-spacing: .06em; }
 .hero-eyebrow-line {
   flex: 1; height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,.45), transparent);
+  background: linear-gradient(90deg, transparent, rgba(2,132,199,.35), transparent);
   min-width: 28px;
 }
 
@@ -269,10 +269,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 /* アクセントバー */
 .hero-accent-bar {
-  width: 72px; height: 5px;
-  background: linear-gradient(90deg, #f97316, #fbbf24);
+  width: 56px; height: 3px;
+  background: linear-gradient(90deg, var(--primary), rgba(2,132,199,.2));
   border-radius: 3px;
-  box-shadow: 0 0 14px rgba(249,115,22,.65);
 }
 
 /* バッジ */
@@ -304,40 +303,52 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 6px;
   font-weight: 900;
-  letter-spacing: -.03em;
+  letter-spacing: -.02em;
   margin: 4px 0 32px;
 }
-/* 「寝ている間に終わる、」：白フォント＋黒ストローク・やや小さめ */
-.hero-title-box {
+/* 「寝ている間に終わる、」：サブライン */
+.hero-title-sub {
   display: block;
-  font-size: clamp(1.7rem, 4vw, 3rem);
-  color: #fff;
-  -webkit-text-stroke: 2px rgba(0,0,0,.75);
-  paint-order: stroke fill;
-  text-shadow: 0 3px 20px rgba(0,0,0,.65);
-  line-height: 1.2;
+  font-size: clamp(1.1rem, 2.8vw, 1.6rem);
+  color: var(--text-muted);
+  font-weight: 700;
+  letter-spacing: .08em;
+  line-height: 1.3;
 }
-/* 「痛くない内視鏡検査」：メインキャッチ・大きく鮮やか */
-.hero-title .accent {
+/* 「痛くない内視鏡検査」：メインキャッチ */
+.hero-title-main {
   display: block;
-  font-size: clamp(2.6rem, 7vw, 5rem);
-  color: #fbbf24;
-  text-shadow: 0 3px 24px rgba(0,0,0,.75), 0 1px 4px rgba(0,0,0,.8);
-  line-height: 1.1;
+  font-size: clamp(2.4rem, 7vw, 4.5rem);
+  color: var(--text);
+  text-shadow: 0 1px 8px rgba(255,255,255,.6);
+  line-height: 1.15;
+  letter-spacing: .02em;
+}
+/* 「胃カメラ・大腸カメラ」：アクセントカラー */
+.hero-title-accent {
+  display: inline-block;
+  font-size: clamp(1.5rem, 4.5vw, 2.8rem);
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  padding: 6px 28px;
+  border-radius: 8px;
+  margin-top: 8px;
+  line-height: 1.3;
+  box-shadow: 0 4px 20px rgba(2,132,199,.4);
 }
 
-/* サブコピー：ダークガラスカード */
+/* サブコピー：ライトガラスカード */
 .hero-sub {
   font-size: clamp(1rem, 1.8vw, 1.15rem);
-  color: rgba(255,255,255,.95);
+  color: var(--text);
   line-height: 1.9;
   margin: 0;
-  background: rgba(0,0,0,.32);
+  background: rgba(255,255,255,.65);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,.2);
+  border: 1px solid rgba(2,132,199,.15);
   border-radius: var(--radius);
   padding: 16px 28px;
 }
@@ -364,9 +375,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   padding: 20px 48px;
   min-height: 66px;
   border-radius: 14px;
-  background: #fff;
+  background: rgba(255,255,255,.85);
   border: 2px solid var(--primary);
   color: var(--primary-dark);
+  backdrop-filter: blur(6px);
 }
 .hero-cta .btn-outline:hover {
   background: var(--primary-light);
@@ -377,10 +389,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: flex;
   align-items: center;
   width: 100%;
-  background: rgba(0,0,0,.38);
+  background: rgba(255,255,255,.7);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,.2);
+  border: 1px solid rgba(2,132,199,.15);
   border-radius: var(--radius);
   padding: 20px 28px;
 }
@@ -388,17 +400,16 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .hero-stat strong {
   display: block;
   font-size: 2.1rem; font-weight: 900;
-  color: #fbbf24;
+  color: var(--primary);
   line-height: 1; margin-bottom: 6px;
-  text-shadow: 0 0 20px rgba(251,191,36,.5);
 }
 .hero-stat span {
-  font-size: .75rem; color: rgba(255,255,255,.8); line-height: 1.5;
+  font-size: .75rem; color: var(--text-muted); line-height: 1.5;
   font-weight: 500;
 }
 .hero-stat-div {
   width: 1px; height: 42px;
-  background: rgba(255,255,255,.22);
+  background: rgba(2,132,199,.15);
   flex-shrink: 0;
 }
 
@@ -407,7 +418,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   position: absolute;
   bottom: 28px; left: 50%; transform: translateX(-50%);
   display: flex; flex-direction: column; align-items: center; gap: 8px;
-  color: rgba(255,255,255,.7); font-size: .72rem; letter-spacing: .15em;
+  color: var(--text-muted); font-size: .72rem; letter-spacing: .15em;
   z-index: 3;
   animation: bounce 2s ease infinite;
 }
@@ -423,8 +434,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .hero-content-wrap { padding: 100px 20px 90px; }
   .hero-left { gap: 22px; max-width: 100%; }
   .hero-scroll { display: none; }
-  .hero-title-box { font-size: clamp(1.4rem, 6vw, 2rem); }
-  .hero-title .accent { font-size: clamp(2rem, 10vw, 3.2rem); }
+  .hero-title-sub { font-size: clamp(0.95rem, 4vw, 1.2rem); }
+  .hero-title-main { font-size: clamp(2rem, 9vw, 3rem); }
+  .hero-title-accent { font-size: clamp(1.3rem, 5.5vw, 1.8rem); padding: 5px 20px; }
   .hero-sub { font-size: .95rem; padding: 14px 18px; }
   .hero-badge { font-size: .79rem; padding: 8px 16px; }
   .hero-stats { padding: 16px 16px; }
@@ -436,8 +448,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .hero-br-sp { display: inline; }
 }
 @media (max-width: 480px) {
-  .hero-title-box { font-size: clamp(1.25rem, 7vw, 1.7rem); }
-  .hero-title .accent { font-size: clamp(1.9rem, 11vw, 2.8rem); }
+  .hero-title-sub { font-size: clamp(0.85rem, 3.8vw, 1.1rem); }
+  .hero-title-main { font-size: clamp(1.8rem, 10vw, 2.6rem); }
+  .hero-title-accent { font-size: clamp(1.1rem, 5vw, 1.5rem); padding: 4px 16px; }
   .hero-badges { gap: 8px; }
   .hero-badge { font-size: .76rem; padding: 7px 14px; }
   .hero-eyebrow-line { display: none; }
@@ -681,8 +694,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transform: scale(1.05);
 }
 
-/* rc-6専用：横並びのため右側に写真カラムとして配置 */
-.rc-6 .rc-icon--photo {
+/* rc-7専用：横並びのため右側に写真カラムとして配置 */
+.rc-7 .rc-icon--photo {
   width: 220px;
   height: calc(100% + 72px);
   min-height: 180px;
@@ -693,7 +706,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 @media (max-width: 900px) {
-  .rc-6 .rc-icon--photo {
+  .rc-7 .rc-icon--photo {
     width: 100%;
     height: 140px;
     border-radius: 20px 20px 0 0;
@@ -707,7 +720,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     width: calc(100% + 48px);
     margin: -28px -24px 20px;
   }
-  .rc-6 .rc-icon--photo {
+  .rc-7 .rc-icon--photo {
     width: calc(100% + 48px);
     margin: -28px -24px 20px;
   }
@@ -717,7 +730,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-size: 1.05rem; font-weight: 700; line-height: 1.4;
   margin-bottom: 10px;
   position: relative; z-index: 1;
-  white-space: nowrap;
 }
 .rc p {
   font-size: .875rem; line-height: 1.8;
@@ -787,20 +799,31 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .rc-5 h3 { color: #fff; }
 .rc-5 p  { color: rgba(255,255,255,.85); }
 
-/* カード6: 全幅アクセント */
+/* カード6: 下剤が自宅に届く */
 .rc-6 {
-  grid-column: 1 / 13;
+  grid-column: 1 / 7;
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+  box-shadow: 0 8px 40px rgba(22,163,74,.4);
+}
+.rc-6:hover { box-shadow: 0 16px 56px rgba(22,163,74,.55); }
+.rc-6 .rc-icon { background: rgba(255,255,255,.2); color: #fff; }
+.rc-6 h3 { color: #fff; }
+.rc-6 p  { color: rgba(255,255,255,.85); }
+
+/* カード7: 全幅アクセント */
+.rc-7 {
+  grid-column: 7 / 13;
   background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
   box-shadow: 0 8px 40px rgba(15,23,42,.5);
   display: flex;
   align-items: center;
   gap: 32px;
 }
-.rc-6:hover { box-shadow: 0 16px 56px rgba(15,23,42,.65); }
-.rc-6 .rc-icon:not(.rc-icon--photo) { background: rgba(255,255,255,.15); color: #fff; margin-bottom: 0; flex-shrink: 0; }
-.rc-6 h3 { color: #fff; font-size: 1.15rem; }
-.rc-6 p  { color: rgba(255,255,255,.82); }
-.rc-6-body { flex: 1; display: flex; flex-direction: column; gap: 10px; }
+.rc-7:hover { box-shadow: 0 16px 56px rgba(15,23,42,.65); }
+.rc-7 .rc-icon:not(.rc-icon--photo) { background: rgba(255,255,255,.15); color: #fff; margin-bottom: 0; flex-shrink: 0; }
+.rc-7 h3 { color: #fff; font-size: 1.15rem; }
+.rc-7 p  { color: rgba(255,255,255,.82); }
+.rc-7-body, .rc-6-body { flex: 1; display: flex; flex-direction: column; gap: 10px; }
 
 /* レスポンシブ */
 @media (max-width: 900px) {
@@ -809,13 +832,14 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .rc-3 { grid-column: 7 / 13; }
   .rc-4 { grid-column: 1 / 7; }
   .rc-5 { grid-column: 7 / 13; }
-  .rc-6 { grid-column: 1 / 13; flex-direction: column; align-items: flex-start; gap: 0; }
-  .rc-6 .rc-icon { margin-bottom: 20px; }
+  .rc-6 { grid-column: 1 / 7; }
+  .rc-7 { grid-column: 7 / 13; flex-direction: column; align-items: flex-start; gap: 0; }
+  .rc-7 .rc-icon { margin-bottom: 20px; }
 }
 @media (max-width: 560px) {
-  .rc-1, .rc-2, .rc-3, .rc-4, .rc-5, .rc-6 { grid-column: 1 / 13; }
-  .rc-6 { flex-direction: column; align-items: flex-start; gap: 0; }
-  .rc-6 .rc-icon { margin-bottom: 20px; }
+  .rc-1, .rc-2, .rc-3, .rc-4, .rc-5, .rc-6, .rc-7 { grid-column: 1 / 13; }
+  .rc-7 { flex-direction: column; align-items: flex-start; gap: 0; }
+  .rc-7 .rc-icon { margin-bottom: 20px; }
   .rc { padding: 28px 24px; }
   .rc-num { font-size: 6rem; }
 }
@@ -834,7 +858,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ---------- Section 4: データ ---------- */
 #data {
   background-color: var(--bg-dark);
-  background-image: url('../images/scoop_05.jpg');
+  background-image: url('../images/endoscopy_system.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -1881,4 +1905,37 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .dc3-title { font-size: .95rem; }
   .dc3-point { padding: 9px 12px; }
   .dc3-point-text { font-size: .8rem; }
+}
+
+/* ---------- トップへ戻るボタン ---------- */
+#back-to-top {
+  position: fixed;
+  bottom: 28px;
+  right: 24px;
+  z-index: 800;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(2,132,199,.4);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity .3s ease, visibility .3s ease, transform .3s ease, background .2s ease;
+}
+#back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+#back-to-top:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+@media (max-width: 767px) {
+  #back-to-top { bottom: 90px; right: 16px; width: 44px; height: 44px; }
 }

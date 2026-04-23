@@ -295,3 +295,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 })();
+
+/* ============================================================
+   トップへ戻るボタン: スクロール300px以上で表示
+   ============================================================ */
+(function () {
+  var btn = document.getElementById('back-to-top');
+  if (!btn) return;
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 300) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  });
+  btn.addEventListener('click', function () {
+    var start = window.scrollY;
+    var duration = 1500;
+    var startTime = null;
+    function easeInOutCubic(t) {
+      return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    }
+    function step(timestamp) {
+      if (!startTime) startTime = timestamp;
+      var elapsed = timestamp - startTime;
+      var progress = Math.min(elapsed / duration, 1);
+      window.scrollTo(0, start * (1 - easeInOutCubic(progress)));
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  });
+})();
