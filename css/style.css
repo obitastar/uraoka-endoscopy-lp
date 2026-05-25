@@ -440,9 +440,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .hero-title-accent { font-size: clamp(1.3rem, 5.5vw, 1.8rem); padding: 5px 20px; }
   .hero-sub { font-size: .95rem; padding: 14px 18px; }
   .hero-badge { font-size: .79rem; padding: 8px 16px; }
-  .hero-stats { padding: 16px 16px; }
-  .hero-stat strong { font-size: 1.3rem; white-space: nowrap; }
-  .hero-stat span { font-size: .7rem; }
+  .hero-stats { padding: 10px 8px; gap: 0; }
+  .hero-stat strong { font-size: 1.1rem; white-space: nowrap; line-height: 1; margin-bottom: 3px; }
+  .hero-stat span { font-size: .65rem; }
+  .hero-stat-div { height: 28px; }
   .hero-cta .btn-primary,
   .hero-cta .btn-outline { font-size: 1rem; padding: 17px 36px; min-height: 58px; }
   .hero-eyebrow { font-size: .7rem; gap: 8px; }
