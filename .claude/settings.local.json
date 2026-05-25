@@ -3,7 +3,20 @@
     "allow": [
       "WebFetch(domain:colonoscopy.nakajima-clinic.com)",
       "WebFetch(domain:tenpakubashi-endoscope.or.jp)",
-      "WebFetch(domain:uraoka-clinic.jp)"
+      "WebFetch(domain:uraoka-clinic.jp)",
+      "Bash(cd \"C:/Users/kimono/Desktop/内科内視鏡LP\" && sed -i 's|写真/|images/|g' index.html && sed -i \"s|'../写真/|'../images/|g\" css/style.css)",
+      "Bash(cd \"C:\\\\Users\\\\kimono\\\\Desktop\\\\内科内視鏡LP\" && gh auth login)",
+      "Bash(git add:*)",
+      "Bash(git push:*)",
+      "Bash(git remote:*)",
+      "Bash(cp \"C:/Users/kimono/Desktop/introduction_image16.jpg\" \"C:/Users/kimono/Desktop/内科内視鏡LP/images/doctor.jpg\" && cp \"C:/Users/kimono/Desktop/introduction_image444.jpg\" \"C:/Users/kimono/Desktop/内科内視鏡LP/images/reception.jpg\" && echo \"done\")",
+      "Bash(cp \"C:/Users/kimono/Desktop/introduction_image16.jpg\" \"C:/Users/kimono/Desktop/内科内視鏡LP/images/doctor.jpg\" && cp \"C:/Users/kimono/Desktop/introduction_image444.jpg\" \"C:/Users/kimono/Desktop/内科内視鏡LP/images/reception.jpg\" && ls \"C:/Users/kimono/Desktop/内科内視鏡LP/images/\")",
+      "Bash(find /c/Users/kimono/Desktop -name \"iin*\" -o -name \"in.jpg\" 2>/dev/null | head -10)",
+      "Bash(cd \"C:\\\\Users\\\\kimono\\\\Desktop\\\\内科内視鏡LP\" && sed -i 's|000-0000-0000|06-6690-0522|g' index.html && sed -i 's|<a href=\"#\" class=\"btn btn-primary btn-lg\">|<a href=\"https://melmo-app.com/clinic/658e34f8151d35005a7f0b2f/reservation\" target=\"_blank\" rel=\"noopener\" class=\"btn btn-primary btn-lg\">|g' index.html)",
+      "Bash(node --check \"C:\\\\Users\\\\kimono\\\\Desktop\\\\内科内視鏡LP\\\\js\\\\script.js\" && echo \"OK\")",
+      "Bash(cd \"C:/Users/kimono/Desktop/内科内視鏡LP\" && cp \"写真/photo_11.jpg\" images/endoscopy_room.jpg && cp \"写真/photo_04.jpg\" images/waiting_room.jpg && cp \"写真/photo_43.jpg\" images/endoscopy_system.jpg && cp \"写真/photo_49.jpg\" images/doctor_portrait.jpg && cp \"写真/photo_53.jpg\" images/doctor_with_scope.jpg && cp \"写真/photo_10.jpg\" images/examination.jpg && cp \"写真/photo_06.jpg\" images/recovery_room.jpg && cp \"写真/photo_09.jpg\" images/exam_room_ready.jpg && cp \"写真/photo_21.jpg\" images/changing_rooms.jpg && cp \"写真/photo_07.jpg\" images/clinic_entrance.jpg && cp \"写真/photo_30.jpg\" images/reception_care.jpg && echo \"Done\" && ls images/)",
+      "Bash(cd \"C:/Users/kimono/Desktop/内科内視鏡LP\" && gh auth status 2>&1)",
+      "WebSearch"
     ]
   }
 }
