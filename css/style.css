@@ -432,7 +432,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .hero-bg-left { width: 100%; background-image: url('../images/scoop_01.jpg'); background-position: top center; }
   .hero-bg-right { display: none; }
   #hero { align-items: flex-end; }
-  .hero-content-wrap { padding: 0 20px 40px; }
+  .hero-content-wrap { padding: 0 20px 100px; }
   .hero-left { gap: 18px; max-width: 100%; }
   .hero-scroll { display: none; }
   .hero-title { word-break: keep-all; }
