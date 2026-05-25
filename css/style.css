@@ -1741,8 +1741,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .br-pc { display: none; }
 
   /* セクションタイトル改行調整 */
-  .section-title { word-break: keep-all; }
-  .data-subtitle-main { font-size: 1.05rem; word-break: keep-all; }
+  .data-subtitle-main { font-size: 1.05rem; }
 }
 
 @media (max-width: 480px) {
