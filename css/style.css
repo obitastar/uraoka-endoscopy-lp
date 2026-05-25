@@ -223,9 +223,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   position: absolute; inset: 0;
   background: linear-gradient(
     160deg,
-    rgba(255,255,255,.55) 0%,
-    rgba(240,249,255,.45) 45%,
-    rgba(224,242,254,.40) 100%
+    rgba(255,255,255,.30) 0%,
+    rgba(240,249,255,.25) 45%,
+    rgba(224,242,254,.20) 100%
   );
   z-index: 1;
 }
