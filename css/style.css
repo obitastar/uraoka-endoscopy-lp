@@ -429,11 +429,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 /* ---- レスポンシブ: Hero ---- */
 @media (max-width: 767px) {
-  .hero-bg-left { width: 100%; }
+  .hero-bg-left { width: 100%; background-image: url('../images/scoop_01.jpg'); }
   .hero-bg-right { display: none; }
   .hero-content-wrap { padding: 100px 20px 90px; }
   .hero-left { gap: 22px; max-width: 100%; }
   .hero-scroll { display: none; }
+  .hero-title { word-break: keep-all; }
   .hero-title-sub { font-size: clamp(0.95rem, 4vw, 1.2rem); }
   .hero-title-main { font-size: clamp(2rem, 9vw, 3rem); }
   .hero-title-accent { font-size: clamp(1.3rem, 5.5vw, 1.8rem); padding: 5px 20px; }
@@ -1735,6 +1736,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
   /* 固定CTA */
   #mobile-cta { display: block; }
+
+  /* PC用改行をスマホで非表示 */
+  .br-pc { display: none; }
+
+  /* セクションタイトル改行調整 */
+  .section-title { word-break: keep-all; }
+  .data-subtitle-main { font-size: 1.05rem; word-break: keep-all; }
 }
 
 @media (max-width: 480px) {
