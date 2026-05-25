@@ -441,7 +441,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .hero-sub { font-size: .95rem; padding: 14px 18px; }
   .hero-badge { font-size: .79rem; padding: 8px 16px; }
   .hero-stats { padding: 16px 16px; }
-  .hero-stat strong { font-size: 1.8rem; white-space: nowrap; }
+  .hero-stat strong { font-size: 1.3rem; white-space: nowrap; }
   .hero-stat span { font-size: .7rem; }
   .hero-cta .btn-primary,
   .hero-cta .btn-outline { font-size: 1rem; padding: 17px 36px; min-height: 58px; }
