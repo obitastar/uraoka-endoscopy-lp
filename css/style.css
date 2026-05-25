@@ -1919,5 +1919,5 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transform: translateY(-2px);
 }
 @media (max-width: 767px) {
-  #back-to-top { bottom: 20px; right: 16px; width: 44px; height: 44px; }
+  #back-to-top { bottom: 10px; right: 16px; width: 44px; height: 44px; }
 }
