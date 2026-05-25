@@ -1737,10 +1737,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   /* 固定CTA */
   #mobile-cta { display: block; }
 
-  /* PC用改行をスマホで非表示 */
-  .br-pc { display: none; }
-
   /* セクションタイトル改行調整 */
+  #reasons .section-title { font-size: clamp(1.2rem, 4.5vw, 1.5rem); }
   .data-subtitle-main { font-size: 1.05rem; }
 }
 
