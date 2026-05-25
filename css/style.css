@@ -1623,6 +1623,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .res-info-card p { font-size: .825rem; color: rgba(255,255,255,.75); line-height: 1.8; }
 .res-info-card a { color: rgba(255,255,255,.6); text-decoration: underline; font-size: .8rem; display: inline-block; margin-top: 8px; }
 .res-info-card a:hover { color: #fff; }
+.res-info-map { padding: 0; overflow: hidden; }
+.res-info-map iframe { display: block; width: 100%; min-height: 280px; }
 
 /* ---------- フッター ---------- */
 #footer {
