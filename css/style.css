@@ -1714,7 +1714,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .reservation-inner h2 { font-size: clamp(1.1rem, 4.5vw, 1.5rem); white-space: nowrap; }
   .reservation-inner > p { font-size: 0.78rem; white-space: nowrap; }
   .res-info-card p { font-size: .75rem; }
-  .rc h3 { font-size: 0.88rem; }
+  .rc h3 { font-size: 0.93rem; }
 }
 
 @media (max-width: 480px) {
