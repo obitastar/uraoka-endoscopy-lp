@@ -1706,7 +1706,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
   /* セクションタイトル改行調整 */
   #reasons .section-title { font-size: clamp(1.2rem, 4.5vw, 1.5rem); }
-  .data-subtitle-main { font-size: 1.05rem; }
+  .data-subtitle-main { font-size: 0.9rem; white-space: nowrap; }
+  #data .section-title { font-size: clamp(1.1rem, 4.5vw, 1.5rem); white-space: nowrap; }
+  .dc3-title { white-space: nowrap; }
+  .dc3-title br { display: none; }
+  .reservation-inner h2 { font-size: clamp(1.1rem, 4.5vw, 1.5rem); white-space: nowrap; }
+  .reservation-inner > p { font-size: 0.78rem; white-space: nowrap; }
+  .res-info-card p { font-size: .75rem; }
 }
 
 @media (max-width: 480px) {
