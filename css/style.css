@@ -429,10 +429,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 /* ---- レスポンシブ: Hero ---- */
 @media (max-width: 767px) {
-  .hero-bg-left { width: 100%; background-image: url('../images/scoop_01.jpg'); }
+  .hero-bg-left { width: 100%; background-image: url('../images/scoop_01.jpg'); background-position: top center; }
   .hero-bg-right { display: none; }
-  .hero-content-wrap { padding: 100px 20px 90px; }
-  .hero-left { gap: 22px; max-width: 100%; }
+  #hero { align-items: flex-end; }
+  .hero-content-wrap { padding: 0 20px 40px; }
+  .hero-left { gap: 18px; max-width: 100%; }
   .hero-scroll { display: none; }
   .hero-title { word-break: keep-all; }
   .hero-title-sub { font-size: clamp(0.95rem, 4vw, 1.2rem); }
@@ -440,10 +441,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .hero-title-accent { font-size: clamp(1.3rem, 5.5vw, 1.8rem); padding: 5px 20px; }
   .hero-sub { font-size: .95rem; padding: 14px 18px; }
   .hero-badge { font-size: .79rem; padding: 8px 16px; }
-  .hero-stats { padding: 10px 8px; gap: 0; }
-  .hero-stat strong { font-size: 1.1rem; white-space: nowrap; line-height: 1; margin-bottom: 3px; }
-  .hero-stat span { font-size: .65rem; }
-  .hero-stat-div { height: 28px; }
+  .hero-stats { display: none; }
   .hero-cta .btn-primary,
   .hero-cta .btn-outline { font-size: 1rem; padding: 17px 36px; min-height: 58px; }
   .hero-eyebrow { font-size: .7rem; gap: 8px; }
