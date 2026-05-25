@@ -1892,7 +1892,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ---------- トップへ戻るボタン ---------- */
 #back-to-top {
   position: fixed;
-  bottom: 28px;
+  bottom: 16px;
   right: 24px;
   z-index: 800;
   width: 48px;
@@ -1919,5 +1919,5 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transform: translateY(-2px);
 }
 @media (max-width: 767px) {
-  #back-to-top { bottom: 90px; right: 16px; width: 44px; height: 44px; }
+  #back-to-top { bottom: 72px; right: 16px; width: 44px; height: 44px; }
 }
